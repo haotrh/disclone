@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { CurrentUser } from 'src/decorators/current-user.decorator';
-import { EventsGateway } from '../events/events.gateway';
+import { EventsGateway } from '../ws/events.gateway';
 import { DmChannelService } from './dm-channel.service';
 import { AddFriendDto } from './dto/add-friend.dto';
 import { CreateDmChannelDto } from './dto/create-dm-channel';

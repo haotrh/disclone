@@ -20,7 +20,7 @@ import { FileService } from '../file/file.service';
 import { PermissionsService } from '../permissions/permissions.service';
 import { Member } from '../server/entities/member.entity';
 import { User } from '../user/entities/user.entity';
-import { EventsGateway } from '../events/events.gateway';
+import { EventsGateway } from '../ws/events.gateway';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
 import { Channel, ChannelType } from './entities/channel.entity';

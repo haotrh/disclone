@@ -18,7 +18,7 @@ import { CreateChannelDto } from '../channel/dto/create-channel.dto';
 import { ModifyChannelPositionsDto } from '../channel/dto/modify-channel-positions.dto';
 import { Permission } from '../permissions/permission.decorator';
 import { User } from '../user/entities/user.entity';
-import { EventsGateway } from '../events/events.gateway';
+import { EventsGateway } from '../ws/events.gateway';
 import { AddRoleMembersDto } from './dto/add-role-members.dto';
 import { CreateInviteDto } from './dto/create-invite.dto';
 import { CreateServerDto } from './dto/create-server.dto';

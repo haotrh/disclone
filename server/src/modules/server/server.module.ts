@@ -2,7 +2,7 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { forwardRef, Module } from '@nestjs/common';
 import { ChannelModule } from '../channel/channel.module';
 import { FileModule } from '../file/file.module';
-import { EventsModule } from '../events/events.module';
+import { EventsModule } from '../ws/events.module';
 import { Invite } from './entities/invite.entity';
 import { Member } from './entities/member.entity';
 import { Role } from './entities/role.entity';

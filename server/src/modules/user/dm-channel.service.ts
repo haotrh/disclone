@@ -2,7 +2,7 @@ import { EntityRepository } from '@mikro-orm/core';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { Injectable } from '@nestjs/common';
 import { Channel, ChannelType } from '../channel/entities/channel.entity';
-import { EventsGateway } from '../events/events.gateway';
+import { EventsGateway } from '../ws/events.gateway';
 import { User } from './entities/user.entity';
 
 @Injectable()

@@ -11,7 +11,7 @@ import { AppService } from './app.service';
 import mikroORMConfig from './mikro-orm.config';
 import { AuthModule } from './modules/auth/auth.module';
 import { ChannelModule } from './modules/channel/channel.module';
-import { EventsModule } from './modules/events/events.module';
+import { EventsModule } from './modules/ws/events.module';
 import { ServerModule } from './modules/server/server.module';
 import { UserModule } from './modules/user/user.module';
 import { PermissionsModule } from './modules/permissions/permissions.module';
@@ -20,7 +20,6 @@ import { PermissionsGuard } from './modules/permissions/permissions.guard';
 import { JwtAuthGuard } from './modules/auth/jwt-auth.guard';
 import { EmojiModule } from './modules/emoji/emoji.module';
 import { CrawlModule } from './modules/crawl/crawl.module';
-import { MediaModule } from './modules/media/media.module';
 
 @Module({
   imports: [
@@ -38,7 +37,6 @@ import { MediaModule } from './modules/media/media.module';
     EventsModule,
     EmojiModule,
     PermissionsModule,
-    MediaModule,
   ],
   controllers: [AppController],
   providers: [

@@ -12,7 +12,7 @@ import { CurrentUser } from 'src/decorators/current-user.decorator';
 import { Permissions } from 'src/types/permissions.types';
 import { Permission } from '../permissions/permission.decorator';
 import { User } from '../user/entities/user.entity';
-import { EventsGateway } from '../events/events.gateway';
+import { EventsGateway } from '../ws/events.gateway';
 import { CreateEmojiDto } from './dtos/create-emoji.dto';
 import { ModifyEmojiDto } from './dtos/modify-emoji.dto';
 import { EmojiService } from './emoji.service';

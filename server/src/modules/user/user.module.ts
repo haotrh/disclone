@@ -4,7 +4,7 @@ import { UserController } from './user.controller';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { User } from './entities/user.entity';
 import { UserSettings } from './entities/user-settings.entity';
-import { EventsModule } from '../events/events.module';
+import { EventsModule } from '../ws/events.module';
 import { FileModule } from '../file/file.module';
 import { ReadState } from '../channel/entities/readState.entity';
 import { RelationshipService } from './relationship.service';

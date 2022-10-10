@@ -13,9 +13,6 @@ import {
 import { ApiHideProperty } from '@nestjs/swagger';
 import { IsBoolean, IsDate, IsEmail, IsEnum, IsString } from 'class-validator';
 import { BaseEntity } from 'src/common/base.entity';
-import { Channel } from 'src/modules/channel/entities/channel.entity';
-import { Member } from 'src/modules/server/entities/member.entity';
-import { Server } from 'src/modules/server/entities/server.entity';
 import { UserSettings } from './user-settings.entity';
 
 export const publicUserFields: (keyof User)[] = [
@@ -101,9 +98,6 @@ export class User extends BaseEntity {
 
   @Embedded({ hidden: true, array: true })
   relationships: Relationship[] = [];
-
-  @Embedded({ hidden: true, object: true })
-  voiceState?: VoiceState;
 }
 
 @Embeddable()
@@ -120,49 +114,4 @@ export class Relationship {
 
   @ManyToOne({ lazy: true })
   user: User;
-}
-
-@Embeddable()
-export class VoiceState {
-  @ManyToOne({ eager: true })
-  member?: Member;
-
-  @Property({
-    persist: false,
-    serializer: (value) => value && value.id,
-    serializedName: 'serverId',
-  })
-  get server(): Server {
-    return this.member?.server;
-  }
-
-  @Property({ persist: false })
-  get user() {
-    return this.member.user;
-  }
-
-  @ManyToOne({
-    serializer: (value) => value?.id ?? value,
-    serializedName: 'channelId',
-  })
-  channel: Channel | null = null;
-
-  @Property({ persist: false })
-  get deaf() {
-    return this.member?.deaf;
-  }
-
-  @Property({ persist: false })
-  get mute() {
-    return this.member?.mute;
-  }
-
-  @Property()
-  selfMute = false;
-
-  @Property()
-  selfDeaf = false;
-
-  @Property()
-  socketId?: string;
 }

@@ -6,7 +6,7 @@ import { Emoji } from '../emoji/entities/emoji.entity';
 import { FileModule } from '../file/file.module';
 import { PermissionsModule } from '../permissions/permissions.module';
 import { Member } from '../server/entities/member.entity';
-import { EventsModule } from '../events/events.module';
+import { EventsModule } from '../ws/events.module';
 import { ChannelController } from './channel.controller';
 import { ChannelService } from './channel.service';
 import { Message } from './entities/message.entity';
