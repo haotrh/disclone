@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica/helvetica-neue-regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer base {
+  *:focus-visible {
+    @apply outline-none;
+  }
+
+  .markdown * {
+    @apply whitespace-pre-wrap max-w-full inline-block;
+  }
+
+  code,
+  .code {
+    font-family: Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco,
+      Courier New, Courier, monospace;
+  }
+
+  html {
+    font-family: "Whitney", sans-serif;
+    @apply leading-5 align-middle;
+  }
+  body {
+    @apply text-text-normal;
+  }
+  input {
+    @apply placeholder-text-muted;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-header-primary;
+  }
+
+  input[type="file"],
+  input[type="file"]::-webkit-file-upload-button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .drop * {
+    @apply pointer-events-none;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-center-between {
+    @apply flex justify-between items-center;
+  }
+
+  .form-control {
+    @apply bg-transparent text-[15px] block w-full p-2 border rounded border-zinc-800 transition-colors hover:border-zinc-900 focus-within:!border-sky-500 duration-300 bg-[#303339];
+  }
+
+  .dark-container {
+    @apply bg-[#303339] border rounded border-zinc-800;
+  }
+
+  input {
+    @apply focus:outline-none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .interactive {
+    @apply select-none font-medium cursor-pointer;
+  }
+
+  .row-button {
+    @apply px-2 py-1.5 rounded-sm text-left block w-full font-medium text-sm;
+  }
+
+  #arrow,
+  #arrow::before {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: inherit;
+  }
+
+  #arrow {
+    visibility: hidden;
+  }
+
+  #arrow::before {
+    visibility: visible;
+    content: "";
+    transform: rotate(45deg);
+    @apply bg-background-floating;
+  }
+
+  #tooltip[data-placement^="top"] #arrow {
+    bottom: -3px;
+  }
+
+  #tooltip[data-placement^="bottom"] #arrow {
+    top: -3px;
+  }
+
+  #tooltip[data-placement^="left"] #arrow {
+    right: -3px;
+  }
+
+  #tooltip[data-placement^="right"] #arrow {
+    left: -3px;
+  }
+
+  .theme-dark {
+    --color-divider: rgb(66, 69, 74);
+    --color-primary: rgb(88, 101, 242);
+    --color-green-0: rgb(59, 165, 93);
+    --color-header-primary: rgb(255, 255, 255);
+    --color-header-secondary: rgb(185, 187, 190);
+    --color-text-normal: #dcddde;
+    --color-text-muted: #a3a6aa;
+    --color-background-primary: rgb(54, 57, 63);
+    --color-background-secondary: rgb(47, 49, 54);
+    --color-background-secondary-alt: rgb(41, 43, 47);
+    --color-background-tertiary: rgb(32, 34, 37);
+    --color-background-accent: #4f545c;
+    --color-background-floating: #18191c;
+    --color-background-nested-floating: #2f3136;
+    --color-background-modifier: rgba(79, 84, 92);
+    --color-background-modifier-hover: rgba(79, 84, 92, 0.4);
+    --color-background-modifier-active: rgba(79, 84, 92, 0.6);
+    --color-background-modifier-selected: rgba(79, 84, 92, 0.6);
+    --color-button-text-disabled: rgb(143, 144, 146);
+    --color-button-primary-normal: hsl(235, 85.6%, 64.7%);
+    --color-button-primary-hover: hsl(235, 51.4%, 52.4%);
+    --color-button-primary-active: hsl(235, 46.7%, 44.1%);
+    --color-button-secondary-normal: #4f545c;
+    --color-button-secondary-hover: #686d73;
+    --color-button-secondary-active: #72767d;
+    --color-button-secondary-disabled: #4f545c;
+    --color-button-danger-normal: hsl(359, 66.7%, 54.1%);
+    --color-button-danger-hover: hsl(359, 56.3%, 40.4%);
+    --color-button-danger-active: hsl(359, 56.3%, 35.1%);
+    --color-button-danger-disabled: hsl(359, 66.7%, 54.1%);
+    --color-button-success-normal: hsl(139, 47.1%, 33.3%);
+    --color-button-success-hover: hsl(138, 46.8%, 24.3%);
+    --color-button-success-active: hsl(138, 46.9%, 22.2%);
+    --color-button-success-disabled: hsl(139, 47.1%, 33.3%);
+    --color-channels-default: rgb(142, 146, 151);
+    --color-channels-active: rgb(142, 146, 151);
+    --color-interactive-normal: rgb(185, 187, 190);
+    --color-interactive-hover: rgb(220, 221, 222);
+    --color-interactive-active: rgb(255, 255, 255);
+    --color-interactive-muted: rgb(79, 84, 92);
+    --color-status-online: rgb(59, 165, 93);
+    --color-status-idle: rgb(250, 168, 26);
+    --color-status-dnd: rgb(237, 66, 69);
+    --color-status-offline: rgb(116, 127, 141);
+    --color-channeltextarea-background: rgb(64, 68, 75);
+    --color-input-background: #202225;
+  }
+
+  .theme-light {
+    --color-divider: rgb(66, 69, 74);
+    --color-primary: rgb(88, 101, 242);
+    --color-green-0: rgb(59, 165, 93);
+    --color-header-primary: #060607;
+    --color-header-secondary: #4f5660;
+    --color-text-normal: #2e3338;
+    --color-text-muted: #5e6772;
+    --color-background-primary: #fff;
+    --color-background-secondary: #f2f3f5;
+    --color-background-secondary-alt: #ebedef;
+    --color-background-tertiary: #e3e5e8;
+    --color-background-modifier: rgba(106, 116, 128, 0.12);
+    --color-background-modifier-hover: rgba(106, 116, 128, 0.16);
+    --color-background-modifier-active: rgba(106, 116, 128, 0.2);
+    --color-background-modifier-selected: rgba(106, 116, 128, 0.24);
+    --color-status-online: rgb(59, 165, 93);
+    --color-status-idle: rgb(250, 168, 26);
+    --color-status-dnd: rgb(237, 66, 69);
+    --color-status-offline: rgb(116, 127, 141);
+    --color-button-text-disabled: rgb(143, 144, 146);
+    --color-button-primary-normal: hsl(235, 85.6%, 64.7%);
+    --color-button-primary-hover: hsl(235, 51.4%, 52.4%);
+    --color-button-primary-active: hsl(235, 46.7%, 44.1%);
+    --color-button-secondary-normal: #4f545c;
+    --color-button-secondary-hover: #686d73;
+    --color-button-secondary-active: #72767d;
+    --color-button-secondary-disabled: #4f545c;
+    --color-button-danger-normal: hsl(359, 66.7%, 54.1%);
+    --color-button-danger-hover: hsl(359, 56.3%, 40.4%);
+    --color-button-danger-active: hsl(359, 56.3%, 35.1%);
+    --color-button-danger-disabled: hsl(359, 66.7%, 54.1%);
+    --color-button-success-normal: hsl(139, 47.1%, 33.3%);
+    --color-button-success-hover: hsl(138, 46.8%, 24.3%);
+    --color-button-success-active: hsl(138, 46.9%, 22.2%);
+    --color-button-success-disabled: hsl(139, 47.1%, 33.3%);
+    --color-background-accent: #6a7480;
+    --color-background-floating: #fff;
+    --color-background-nested-floating: #fff;
+    --color-channels-default: #5e6772;
+    --color-interactive-normal: #4f5660;
+    --color-interactive-hover: #2e3338;
+    --color-interactive-active: #060607;
+    --color-interactive-muted: #c7ccd1;
+    --color-input-background: #e3e5e8;
+    --color-channeltextarea-background: #ebedef;
+
+    @apply bg-background-primary text-text-normal;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-clip: content-box;
+    border: 1px solid transparent;
+    @apply rounded-full bg-background-secondary;
+  }
+
+  .custom-scrollbar.no-track::-webkit-scrollbar-track {
+    @apply !bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-[9px] h-[9px] flex justify-start;
+  }
+
+  .custom-scrollbar.scrollbar-thin::-webkit-scrollbar {
+    @apply !w-[7px];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border: 1px solid transparent;
+
+    @apply rounded-full bg-background-tertiary;
+  }
+
+  .link {
+    @apply text-[#00AFF4] font-medium hover:underline cursor-pointer;
+  }
+
+  .attachment-remove {
+    @apply opacity-0;
+  }
+
+  .attachment-remove:hover,
+  .attachment:hover .attachment-remove {
+    @apply opacity-100;
+  }
+}

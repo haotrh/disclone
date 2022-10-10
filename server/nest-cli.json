@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "@nestjs/swagger/plugin",
+        "options": {
+          "dtoFileNameSuffix": [
+            ".entity.ts",
+            ".dto.ts",
+            ".ro.ts"
+          ],
+          "controllerFileNameSuffix": [
+            ".controller.ts"
+          ]
+        }
+      }
+    ]
+  }
+}

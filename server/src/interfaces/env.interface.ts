@@ -1,0 +1,16 @@
+export interface EnvironmentVariables {
+  PORT: number;
+  JWT_SECRET: string;
+  ACCESS_TOKEN_EXPIRATION_MINUTES: number;
+  REFRESH_TOKEN_EXPIRATION_DAYS: number;
+  RESET_PASSWORD_TOKEN_EXPIRATION_MINUTES: number;
+  VERIFY_EMAIL_TOKEN_EXPIRATION_MINUTES: number;
+  GOOGLE_ID: string;
+  GOOGLE_SECRET: string;
+  FACEBOOK_ID: string;
+  FACEBOOK_SECRET: string;
+  MONGODB_CLIENT_URL: string;
+  AWS_ACCESS_KEY_ID: string;
+  AWS_SECRET_ACCESS_KEY: string;
+  S3_BUCKET: string;
+}

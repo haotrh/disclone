@@ -1,0 +1,25 @@
+.simplebar-scrollbar:before {
+  @apply bg-background-tertiary;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  /* When hovered, remove all transitions from drag handle */
+  opacity: 1;
+  transition: opacity 0s linear;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 9px;
+}
+
+.select-scrollbar .simplebar-content-wrapper[style*="scroll"] {
+  padding-right: 9px;
+}
+
+.select-scrollbar .simplebar-scrollbar:before {
+  top: 0px !important;
+  bottom: 0px !important;
+  right: 0px !important;
+  left: 0px !important;
+}
